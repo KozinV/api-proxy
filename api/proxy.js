@@ -13,7 +13,7 @@ const PROXY_TARGETS = [
   {
     path: "/api/proxy/elevenlabs",
     target:
-      "https://api.elevenlabs.iov1/text-to-speech/JBFqnCBsd6RMkjVDRZzb?output_format=mp3_44100_128",
+      "https://api.elevenlabs.io/v1/text-to-speech/JBFqnCBsd6RMkjVDRZzb?output_format=mp3_44100_128",
   },
 ];
 
