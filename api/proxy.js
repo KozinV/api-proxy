@@ -10,24 +10,21 @@ const PROXY_TARGETS = [
     target: "https://generativelanguage.googleapis.com",
   },
   { path: "/api/proxy/anthropic", target: "https://api.anthropic.com" },
-  {
-    path: "/api/proxy/elevenlabs",
-    target:
-      "https://api.elevenlabs.io/v1/text-to-speech/JBFqnCBsd6RMkjVDRZzb?output_format=mp3_44100_128",
-  },
+  { path: "/api/proxy/elevenlabs", target: "https://api.elevenlabs.io" },
 ];
 
 PROXY_TARGETS.forEach(({ path, target }) => {
-  app.use(
-    path,
-    createProxyMiddleware({
-      target: target,
-      changeOrigin: true,
-      pathRewrite: {
-        [`^${path}`]: "",
-      },
-    })
-  );
+  const url = createProxyMiddleware({
+    target: target,
+    changeOrigin: true,
+    pathRewrite: {
+      [`^${path}`]: "",
+    },
+  });
+
+  console.log("🚀 ~ PROXY_TARGETS.forEach ~ url:", url);
+
+  app.use(path, url);
 });
 
 export default app;
