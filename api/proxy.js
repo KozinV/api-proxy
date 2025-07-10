@@ -10,7 +10,11 @@ const PROXY_TARGETS = [
     target: "https://generativelanguage.googleapis.com",
   },
   { path: "/api/proxy/anthropic", target: "https://api.anthropic.com" },
-  { path: "/api/proxy/elevenlabs", target: "https://api.elevenlabs.io" },
+  {
+    path: "/api/proxy/elevenlabs",
+    target:
+      "https://api.elevenlabs.iov1/text-to-speech/JBFqnCBsd6RMkjVDRZzb?output_format=mp3_44100_128",
+  },
 ];
 
 PROXY_TARGETS.forEach(({ path, target }) => {
